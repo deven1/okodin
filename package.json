@@ -1,0 +1,38 @@
+{
+  "name": "okodin",
+  "version": "1.0.0",
+  "description": "OkOdin - Dating App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all",
+    "c": "node repl.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deven1/okodin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deven1/okodin/issues"
+  },
+  "homepage": "https://github.com/deven1/okodin#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.1",
+    "express": "^4.15.2",
+    "express-flash-messages": "^0.1.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.2",
+    "faker": "^4.1.0",
+    "fs": "0.0.1-security",
+    "morgan": "^1.8.1",
+    "path": "^0.12.7",
+    "pg": "^6.1.5",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.4",
+    "sequelize-cli": "^2.7.0"
+  }
+}

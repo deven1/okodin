@@ -1,0 +1,20 @@
+<main class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>All the vikings worth dating</h2>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+   {{#each users as |user|}}
+      <div class="col-xs-4">
+        <img src="/images/{{user.Profile.photo}}" /><br>
+        <div class="text-center">
+          <p><a href="{{userPath user.id}}">{{user.username}}</a></p>
+          <p><a href="#">Like?</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div class="clearfix"></div>
+</main>

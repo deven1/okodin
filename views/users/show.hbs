@@ -1,0 +1,54 @@
+<main>
+  <div class="container-fluid banner">
+    <div class="row">
+      <div class="col-xs-2 col-xs-offset-1">
+        <img class="user-profile" src="/images/{{user.Profile.photo}}"/>
+      </div>
+      <div class="col-xs-9">
+        <h1>{{user.username}}</h1>
+        <p>{{user.Profile.age}} years old, lives in {{user.Profile.city}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class ="row">
+      <div class="col-xs-8">
+        {{#if ownsPage}}
+        <a href="{{editUserPath user.id}}">Edit me!</a>
+        {{/if}}
+        <h3>About Me</h3>
+        <p>{{user.Profile.about}}</p>
+        <h3>Talents</h3>
+        <ul>
+          {{#each user.Profile.talents as |talent|}}
+          <li>
+            {{talent}}
+          </li>
+          {{/each}}
+        </ul>
+        <h3>Favorite Things</h3>
+        <ul>
+          {{#each user.Profile.favorites as |favorite|}}
+          <li>
+            {{favorite}}
+          </li>
+          {{/each}}
+        </ul>
+        <h3>Why You Should Message Me</h3>
+        <p>{{user.Profile.whyMe}}</p>
+      </div>
+
+
+      <div class="col-xs-4">
+      <h4>Basic Info</h4>
+      <p>Gender: {{user.Profile.gender}}</p>
+      <p>Status: {{user.Profile.maritalStatus}}</p>
+      <p>Height in inches: {{user.Profile.height}}</p>
+      <p>Body type: {{user.Profile.bodyType}}</p>
+      <p>Occupation: {{user.Profile.occupation}}</p>
+      <p>Children: {{user.Profile.children}}</p>
+      <p>Pets: {{user.Profile.pets}}</p>
+      </div>
+    </div>
+  </div>
+</main>

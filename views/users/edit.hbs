@@ -1,0 +1,117 @@
+<main class="container">
+  <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+    <form method="POST" action="/users">
+      <input type="hidden" name="_method" value="PUT"/>
+      <input type="hidden" name="userId" value="{{user.id}}" />
+
+        <div class="btn-group" data-toggle="buttons">
+          <label for="profile[gender]">Gender</label><br>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[gender]" value="male"> Male
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[gender]" value="female">Female
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="profile[age]">Age: </label>
+          <input type="text" class="form-control" name="profile[age]" value="{{user.Profile.age}}" />
+        </div>
+
+        <div class="form-group">
+          <label for="profile[height]">Height: </label>
+          <input type="text" class="form-control" name="profile[height]" value="{{user.Profile.height}}" />
+        </div>
+
+        <div class="form-group">
+          <label for="profile[city]">City: </label>
+          <input type="text" class="form-control" name="profile[city]" value="{{user.Profile.city}}" />
+        </div>
+
+
+        <div class="form-group">
+          <label for="profile[children]">Number of children: </label>
+          <input type="text" class="form-control" name="profile[children]" value="{{user.Profile.children}}" />
+        </div>
+
+        <div class="form-group">
+          <label for="profile[pets]">Pets: </label>
+          <input type="text" class="form-control" name="profile[pets]" value="{{user.Profile.pets}}" />
+        </div>
+
+        <div class="btn-group" data-toggle="buttons">
+          <label for="profile[maritalStatus]">Marital Status:</label><br>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[maritalStatus]" value="1">Single
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[maritalStatus]" value="2">Married
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[maritalStatus]" value="3">Dating
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[maritalStatus]" value="4">It's complicated
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[maritalStatus]" value="5">Married to the game
+          </label>
+        </div>
+
+        <div class="btn-group" data-toggle="buttons">
+          <label for="profile[bodyType]">Body type:</label><br>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[bodyType]" value="1">Built like a god
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[bodyType]" value="2">Built like a fish
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[bodyType]" value="3">Built like a ground squirrel
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[bodyType]" value="4">Built like a weird trapezoid
+          </label>
+          <label class="btn btn-default">
+            <input type="radio" name="profile[bodyType]" value="5">Barely built at all
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label for="profile[about]">About me: </label>
+          <input type="text" class="form-control" name="profile[about]" value="{{user.Profile.about}}" />
+        </div>
+
+        <div class="form-group">
+          <label for="profile[occupation]">Occupation: </label>
+          <input type="text" class="form-control" name="profile[occupation]" value="{{user.Profile.occupation}}" />
+        </div>
+
+        <div class="form-group">
+          <label for="profile[talents][]">Talents</label>
+          {{#each user.Profile.talents as |talent|}}
+            <input type="text" name="profile[talents][]" class="form-control" value="{{talent}}">
+          {{/each}}
+          <input type="text" name="profile[talents][]" class="form-control">
+          <input type="text" name="profile[talents][]" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="profile[favorites][]">Favorites</label>
+          {{#each user.Profile.favorites as |favorite|}}
+            <input type="text" name="profile[favorites][]" class="form-control" value="{{favorite}}">
+          {{/each}}
+          <input type="text" name="profile[favorites][]" class="form-control">
+          <input type="text" name="profile[favorites][]" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="profile[whyMe]">Why you should message me: </label>
+          <input type="text" class="form-control" name="profile[whyMe]" value="{{user.Profile.whyMe}}" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Update profile</button>
+    </form>
+  </div>
+</main>
