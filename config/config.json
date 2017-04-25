@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "devenbhatt",
+    "password": null,
+    "database": "okodin",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "devenbhatt",
+    "password": null,
+    "database": "okodin",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "devenbhatt",
+    "password": null,
+    "database": "okodin_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
